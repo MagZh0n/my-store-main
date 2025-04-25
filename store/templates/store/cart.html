@@ -13,15 +13,18 @@
                     {{ item.quantity }} шт. —
                     {{ item.item_total }} ₸
     
+
                     <form action="{% url 'decrease_quantity' item.product.id %}" method="post" style="display:inline;">
                         {% csrf_token %}
                         <button type="submit">−</button>
                     </form>
 
+
                     <form action="{% url 'increase_quantity' item.product.id %}" method="post" style="display:inline;">
                         {% csrf_token %}
                         <button type="submit">+</button>
                     </form>
+                    
                     
 
                     <form action="{% url 'remove_from_cart' item.product.id %}" method="post" style="display:inline;">
