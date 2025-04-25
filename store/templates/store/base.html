@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Магазин{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">Магазин</a>
+        </div>
+        <div class="links">
+            <a href="{% url 'home' %}">Главная</a>
+            <a href="{% url 'product_list' %}">Товары</a>
+            <a href="{% url 'cart' %}">Корзина</a>
+            <a href="{% url 'orders' %}">История</a>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-btn">Выйти</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="auth-btn">Вход</a>
+                <a href="{% url 'register' %}" class="auth-btn">Регистрация</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+</html>

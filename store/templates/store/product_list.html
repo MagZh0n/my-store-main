@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Товары - Магазин{% endblock %}
+
+{% block content %}
+    <h1>Список товаров</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }} тг.
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

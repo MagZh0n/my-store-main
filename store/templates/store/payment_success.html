@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Оплата успешна{% endblock %}
+
+{% block content %}
+    <h1>Оплата прошла успешно!</h1>
+    <p>Спасибо за ваш заказ. Номер вашего заказа: #{{ order.id }}</p>
+    <a href="{% url 'product_list' %}">Вернуться к покупкам</a>
+{% endblock %}

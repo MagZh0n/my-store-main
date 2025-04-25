@@ -1,0 +1,49 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block content %}
+    <h1>Корзина</h1>
+
+    {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    {{ item.product.name }} —
+                    {{ item.quantity }} шт. —
+                    {{ item.item_total }} ₸
+
+                    <!-- Уменьшить -->
+                    <form action="{% url 'decrease_quantity' item.product.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">−</button>
+                    </form>
+
+                    <!-- Увеличить -->
+                    <form action="{% url 'increase_quantity' item.product.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">+</button>
+                    </form>
+
+                    <!-- Удалить -->
+                    <form action="{% url 'remove_from_cart' item.product.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Удалить</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Итого: {{ total_sum }} ₸</p>
+
+        <form method="post" action="{% url 'fake_payment' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Оплатить</button>
+        </form>
+    {% else %}
+        <p>Корзина пуста</p>
+    {% endif %}
+{% endblock %}
+
+
+
+

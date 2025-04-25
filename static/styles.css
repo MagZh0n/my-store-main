@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a, .navbar button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.navbar a:hover, .navbar button:hover {
+    text-decoration: underline;
+}
+
+.navbar .auth-btn, .navbar .logout-btn {
+    padding: 5px 15px;
+    background-color: #5c6bc0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar .auth-btn:hover, .navbar .logout-btn:hover {
+    background-color: #3949ab;
+}
+
+.main-container {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item a {
+    color: #e57373;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart-item a:hover {
+    text-decoration: underline;
+}
+
+.cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Стили для страницы регистрации */
+.form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.form-container input:focus {
+    border-color: #5c6bc0;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #3949ab;
+}
+
+.form-container p {
+    margin-top: 15px;
+    color: #666;
+}
+
+.form-container a {
+    color: #5c6bc0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+    font-weight: bold;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.order-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.order-items {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.order-items li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.no-orders {
+    color: #888;
+    font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
